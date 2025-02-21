@@ -1,0 +1,80 @@
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40; /* Dark gray heading */
+        }
+
+        .upload-area {
+            border: 2px dashed #ced4da; /* Dashed border */
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer; /* Indicate clickable area */
+        }
+
+        .upload-area:hover {
+            border-color: #80bdff; /* Highlight on hover */
+        }
+
+        .upload-area input[type="file"] {
+            display: none; /* Hide the actual input */
+        }
+
+        .upload-icon {
+            font-size: 40px;
+            color: #adb5bd; /* Gray icon */
+            margin-bottom: 10px;
+        }
+
+        .upload-text {
+            color: #6c757d; /* Gray text */
+        }
+
+        #image-preview {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for preview */
+            display: none; /* Initially hidden */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 500px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .upload-icon {
+                font-size: 30px;
+            }
+        }
+    

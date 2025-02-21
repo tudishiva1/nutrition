@@ -1,0 +1,38 @@
+
+<body>
+    <div class="container">
+        <h1>NutriLens AI</h1>
+        <p>Analyze Your Meal with AI</p>
+        <p>Upload a photo of your meal and let our AI analyze its nutritional content. Get instant insights about calories, macronutrients, and personalized recommendations.</p>
+
+        <div class="upload-area" id="upload-area">
+            <input type="file" id="image-upload" accept="image/*">
+            <i class="upload-icon">⬆️</i> <span class="upload-text">Drag and drop your meal photo here<br>or click to select a file</span>
+        </div>
+
+        <img id="image-preview" src="#" alt="Meal Preview">
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('upload-area');
+        const imageUpload = document.getElementById('image-upload');
+        const imagePreview = document.getElementById('image-preview');
+
+        uploadArea.addEventListener('click', () => {
+            imageUpload.click();
+        });
+
+        imageUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block'; // Show the preview
+                    uploadArea.style.display = 'none'; // Hide the upload area
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
